@@ -1,0 +1,15 @@
+Login/ Register
+
+Register
+   - Daftar Ahli
+      - Pembayaran
+
+Login
+   - Profil
+   - Dashboard
+   - Permohonan
+        - Borang Permohonan
+            - Pilihan Permohonan
+            - Muatnaik dokumen
+        - Status Permohonan
+   - Jadual Pembayaran
