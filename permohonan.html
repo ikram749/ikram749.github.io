@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/vendors/tagify.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/vendors/flatpickr/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/vendors/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/sweetalert2.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="./assets/css/vendors/bootstrap.css">
@@ -74,7 +75,7 @@
             </div>
           </form>
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="dashboard.html"><img class="img-fluid" src="./assets/images/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="dashboard.html"><img class="img-fluid" src="./assets/images/logo/you-logo-here.png" alt=""></a></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">
@@ -172,7 +173,7 @@
       <div class="sidebar-wrapper" sidebar-layout="stroke-svg">
         <div>
           <div class="logo-wrapper"><a href="dashboard.html"><img class="img-fluid for-light"
-                src="./assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark"
+                src="./assets/images/logo/you-logo-here.png" alt=""><img class="img-fluid for-dark"
                 src="./assets/images/logo/logo_dark.png" alt=""></a>
             <div class="back-btn"><i class="fa fa-angle-left"></i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
@@ -195,7 +196,7 @@
                 </li>
                 <li class="sidebar-main-title">
                   <div>
-                    <h6 class="lan-1">Utama</h6>
+                    <h6 >Utama</h6>
                   </div>
                 </li>
                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
@@ -244,7 +245,7 @@
 
                 <li class="sidebar-main-title">
                   <div>
-                    <h6 class="lan-1">Pengguna</h6>
+                    <h6 >Pengguna</h6>
                   </div>
                 </li>
                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
@@ -315,8 +316,8 @@
                                 </div>
                               </div>
                               <div class="product-tab-content">
-                                <h6>Muatnaik dokumen</h6>
-                                <p>Muatnaik dokumen</p>
+                                <h6>Keseluruhan</h6>
+                                <p>Keseluruhan Pinjaman</p>
                               </div></a></li>
                           <!-- <li class="nav-item"> <a class="nav-link" id="category-product-tab" data-bs-toggle="pill" href="#category-product" role="tab" aria-controls="category-product" aria-selected="false">
                               <div class="nav-rounded">
@@ -362,27 +363,38 @@
                             <div class="sidebar-body">
                               <form class="row g-2" style="margin-bottom:100px">
                                 <div class="col-md-12"> 
-                                <label class="col-md-12 form-label" for="productTitle1">Jenis Pinjaman <span class="txt-danger"> *</span>
+                                <label class="col-md-12 form-label" for="productTitle1">Jenis Pinjaman <span class="txt-danger"> *</span></label>
                                   <select class="form-select">
-                                    <option value="AL" selected>Persendirian</option>
-                                    <option value="WY">Kenderaan</option>
+                                    <option value="AL" >Loan</option>
+                                    <option value="WY">Roadtax</option>
+                                    <option value="WY">Barangan Elektronik</option>
+                                    <option value="WY" selected>Sewaan Tapak</option>
                                   </select>
-                                </label>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                  <label class="col-md-12 form-label" for="productTitle1">Jumlah Pinjaman<span class="txt-danger"> *</span></label>
+                                      <select class="form-select">
+                                        <option value="AL" >RM 100,000.00</option>
+                                        <option value="AL" >RM 50,000.00</option>
+                                        <option value="AL" >RM 30,000.00</option>
+                                        <option value="AL" selected>RM 20,000.00</option>
+                                        <option value="AL" >RM 10,000.00</option>
+                                      </select> 
                                 </div>
                                 <div class="col-md-12">
-                                  <label class="col-md-12 form-label" for="productTitle1">Tempoh Pinjaman <span class="txt-danger"> *</span>
-                                    <select class="form-select">
+                                  <label class="col-md-12 form-label" for="productTitle1">Tempoh Pinjaman<span class="txt-danger"> *</span></label>
+                                      <select class="form-select">
                                       <option value="AL" selected>12 Bulan</option>
                                       <option value="WY">24 Bulan</option>
                                       <option value="WY">36 Bulan</option>
                                     </select>
-                                  </label>
                                 </div>
                                
                               </form>
                               <div class="product-buttons">
-                                <div class="btn">
-                                  <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                <div class="btn" id="next">
+                                  <div class="d-flex align-items-center gap-sm-2 gap-1">Seterusnya
                                     <svg>
                                       <use href="./assets/svg/icon-sprite.svg#front-arrow">  </use>
                                     </svg>
@@ -391,35 +403,95 @@
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane fade" id="gallery-product" role="tabpanel" aria-labelledby="gallery-product-tab">
+                          <div class="tab-pane fade" id="gallery-product" role="tabpanel" aria-labelledby="gallery-product-tab" role="tab" aria-controls="gallery-product">
                             <div class="sidebar-body">
-                              <div class="product-upload" style="margin-bottom:100px">
-                                <p>Muatnaik Dokuman</p>
-                                <form class="dropzone dropzone-light" id="multiFileUploadA" action="/upload.php">
-                                  <div class="dz-message needsclick">
-                                    <svg>
-                                      <use href="./assets/svg/icon-sprite.svg#file-upload"></use>
-                                    </svg>
-                                    <h6>Drag your image here, or <a class="txt-primary" href="#!">browser</a></h6><span class="note needsclick">SVG,PNG,JPG or GIF</span>
+                              <form class="row g-2">
+                                <div class="row g-lg-4" style="margin-bottom: 25px;">
+                                  <h4>Pinjaman</h4>
+                                  <div class="col-12">
+                                    <div class="row g-3">
+                                      <div class="col-sm-12">
+                                        <div class="row g-2">
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Nama</label>
+                                              <div class="col-sm-9">
+                                                <p>Ali Bin Abu</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">My Kad</label>
+                                              <div class="col-sm-9">
+                                                <p>980872-63-5241</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Alamat</label>
+                                              <div class="col-sm-9">
+                                                <p>56 Jalan Jejaka Taman Maluri Cheras 55100 Malaysia</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
-                                </form>
-                              </div>
-                              <div class="product-buttons">
-                                <div class="btn">
-                                  <div class="d-flex align-items-center gap-sm-2 gap-1">
-                                    <svg>
-                                      <use href="./assets/svg/icon-sprite.svg#back-arrow"></use>
-                                    </svg>Previous
+                                  <hr>
+                                  <div class="col-12">
+                                    <div class="row g-3">
+                                      <div class="col-sm-12">
+                                        <div class="row g-2">
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Jenis Pinjaman</label>
+                                              <div class="col-sm-9">
+                                                <p class="fw-bold fs-6">Sewaan Tapak</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Jumlah Pinjaman</label>
+                                              <div class="col-sm-9">
+                                                <p class="fw-bold fs-6">RM 20,000.00</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Bulanan</label>
+                                              <div class="col-sm-9">
+                                                <p class="fw-bold fs-6">RM 1,200.00</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Tempoh Pinjaman</label>
+                                              <div class="col-sm-9">
+                                                <p class="fw-bold fs-6">12 bulan</p>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                              <label class="col-sm-3">Kadar Interest</label>
+                                              <div class="col-sm-9">
+                                                <p class="fw-bold fs-6">4.0 %</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
-                                <div class="btn">
-                                  <div class="d-flex align-items-center gap-sm-2 gap-1">Submit
-                                    <svg>
-                                      <use href="./assets/svg/icon-sprite.svg#front-arrow"></use>
-                                    </svg>
+                                <div class="product-buttons">
+                                  <div class="btn" id="prev">
+                                    <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                      <svg>
+                                        <use href="./assets/svg/icon-sprite.svg#back-arrow"></use>
+                                      </svg>Kembali
+                                    </div>
+                                  </div>
+                                  <div class="btn" id="submit">
+                                   
+                                    <div class="d-flex align-items-center gap-sm-2 gap-1">Hantar Permohonan
+                                      <svg>
+                                        <use href="./assets/svg/icon-sprite.svg#front-arrow"></use>
+                                      </svg>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
+                              </form>
                             </div>
                           </div>
                           <!-- <div class="tab-pane fade" id="category-product" role="tabpanel" aria-labelledby="category-product-tab">
@@ -911,12 +983,34 @@
     <script src="./assets/js/select2/intltelinput.min.js"></script>
     <script src="./assets/js/add-product/select4-custom.js"></script>
     <script src="./assets/js/editors/quill.js"></script>
-    <script src="./assets/js/custom-add-product.js"></script>
     <script src="./assets/js/height-equal.js"></script>
     <script src="./assets/js/tooltip-init.js"></script>
+    <script src="../assets/js/sweet-alert/sweetalert.min.js"></script>
+    <script src="../assets/js/sweet-alert/app.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/theme-customizer/customizer.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#next").click(function(){
+          $('#gallery-product-tab').addClass("active");
+          $('#detail-product-tab').removeClass("active");
+          $("#detail-product").removeClass("active").removeClass("show");
+          $("#gallery-product").addClass("active").addClass("show");
+        });
+        $("#prev").click(function(){
+          $('#detail-product-tab').addClass("active");
+          $('#gallery-product-tab').removeClass("active");
+          $("#gallery-product").removeClass("active").removeClass("show");
+          $("#detail-product").addClass("active").addClass("show");
+        });
+        $("#submit").click(function(){
+          swal("Permohonan berjaya dihantar!", {
+            icon: "success",
+          });
+        });
+      });
+    </script>
   </body>
 </html>

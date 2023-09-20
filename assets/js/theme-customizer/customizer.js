@@ -136,7 +136,7 @@
           );
           $(".logo-wrapper")
             .find("img")
-            .attr("src", "./assets/images/logo/logo.png");
+            .attr("src", "./assets/images/logo/you-logo-here.png");
           localStorage.setItem("page-wrapper-cuba", "horizontal-wrapper");
           break;
         }
